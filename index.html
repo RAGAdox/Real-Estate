@@ -11,7 +11,9 @@
     <meta name="generator" content="Hugo 0.84.0" />
     <title>Griha Prabesh</title>
     <style>
-      .background-blur {
+      .coursel-controls {
+        position: absolute;
+        top: 25%;
       }
       .coursel-image {
         object-fit: cover;
@@ -21,18 +23,22 @@
       }
       .coursel-caption-responsive {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: space-around;
       }
       @media (min-width: 768px) {
         .coursel-caption-responsive {
+          flex-direction: row;
           color: rgb(212, 212, 212);
           position: absolute !important;
           bottom: 0;
           left: 0;
           right: 0;
           width: 100%;
+        }
+        .coursel-controls {
+          top: 50%;
         }
       }
     </style>
@@ -63,6 +69,7 @@
             px-3
             justify-content-md-around
             zindex-sticky
+            shadow-sm
           "
         >
           <a class="navbar-brand" href="#">Griha Prabesh</a>
@@ -99,8 +106,8 @@
       <!-- MAIN BODY-->
       <main class="d-flex flex-column h-100 w-100 position-absolute">
         <!-- Coursel-->
-        <div class="d-flex flex-column w-100 position-relative bg-info">
-          <div class="flex-column position-relative" id="coursel#0">
+        <div class="w-100">
+          <div class="flex-column position-relative d-none" id="coursel#0">
             <img src="img5.jpg" class="coursel-image" alt="..." />
             <div class="coursel-caption-responsive">
               <div class="d-flex flex-column text-start">
@@ -112,7 +119,7 @@
               </button>
             </div>
           </div>
-          <div class="flex-column position-relative" id="coursel#1">
+          <div class="flex-column position-relative d-none" id="coursel#1">
             <img src="img4.jpg" class="coursel-image" alt="..." />
             <div class="coursel-caption-responsive">
               <div class="d-flex flex-column text-start">
@@ -124,7 +131,7 @@
               </button>
             </div>
           </div>
-          <div class="flex-column position-relative" id="coursel#2">
+          <div class="flex-column position-relative d-none" id="coursel#2">
             <img src="img3.jpg" class="coursel-image" alt="..." />
             <div class="coursel-caption-responsive">
               <div class="d-flex flex-column text-start">
@@ -138,10 +145,9 @@
           </div>
           <div
             class="
-              position-absolute
               btn
               start-0
-              top-50
+              coursel-controls
               btn-transparent
               fs-1
               text-white-50
@@ -152,10 +158,9 @@
           </div>
           <div
             class="
-              position-absolute
               btn
               end-0
-              top-50
+              coursel-controls
               btn-transparent
               fs-1
               text-white-50
@@ -165,28 +170,95 @@
             <span><i class="bi bi-chevron-right"></i></span>
           </div>
         </div>
-        <h1>Cover your page.</h1>
-        <p class="lead">
-          Cover is a one-page template for building simple and beautiful home
-          pages. Download, edit the text, and add your own fullscreen background
-          photo to make it your own.
-        </p>
-        <p class="lead">
-          <a
-            href="#"
-            class="btn btn-lg btn-secondary fw-bold border-white bg-white"
-            >Learn more</a
+        <!-- MAIN CONTENT -->
+        <!--Locations -->
+        <section class="d-flex flex-column w-100 my-3 h-100" id="locations">
+          <h3 class="text-center">Get your properties in the top locations</h3>
+          <div
+            class="d-flex w-100 justify-content-around flex-column flex-md-row"
           >
-        </p>
+            <div class="d-flex flex-column align-self-center">
+              <h4>Our Locations</h4>
+              <ol>
+                <li>Patuli,Kolkata</li>
+                <li>Joka,Kolkata</li>
+                <li>Sapurji,NEw Town,Kolkata</li>
+              </ol>
+            </div>
+            <iframe
+              src="https://www.google.com/maps/d/u/0/embed?mid=15V5LYka89a2JcQZjAg8CjJex9x56jBKw"
+              width="100%"
+              height="480"
+            ></iframe>
+          </div>
+        </section>
+        <!-- Amenities-->
+        <section class="d-flex flex-column w-100 h-100 my-3" id="amenities">
+          <h3 class="text-center">World Class amenities</h3>
+          <p class="text-center">To enjoy each and every moment of your stay</p>
+          <div
+            class="d-flex flex-column w-100 flex-md-row justify-content-around"
+          >
+            <ul>
+              <li>Rooftop Deck and Outdoor Pool</li>
+              <li>Billiard Room</li>
+              <li>Fitness Studio</li>
+              <li>Steam Room</li>
+              <li>Indore and Outdoor Sports</li>
+            </ul>
+          </div>
+        </section>
+        <section class="d-flex flex-column w-100 h-100" id="contact-us">
+          <h3 class="text-center">Contact Us</h3>
+          <form class="form-group px-3">
+            <div class="mb-3">
+              <label class="form-label" for="email">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Enter your email address"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="name">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="Subject">Subject</label>
+              <input
+                type="text"
+                class="form-control"
+                id="subject"
+                placeholder="Enter subject"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="Subject">Subject</label>
+              <textarea
+                type="text"
+                class="form-control"
+                id="body"
+                placeholder="Write your message"
+              ></textarea>
+            </div>
+            <button class="btn btn-primary">Send Us a Message</button>
+          </form>
+        </section>
       </main>
       <!--Footer-->
-      <footer class="mt-auto">
+      <!--footer class="mt-auto">
         <p>
           Cover template for
           <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>,
           by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.
         </p>
-      </footer>
+      </footer-->
     </div>
     <script>
       const count = 3;
